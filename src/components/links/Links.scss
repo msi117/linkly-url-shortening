@@ -1,0 +1,64 @@
+@use '../../assets/styleVars';
+
+.links-container {
+    color: styleVars.$lite;
+    width: 85%;
+    margin: 0 auto;
+    margin-top: 1rem;
+}
+
+.links-header {
+    background-color: styleVars.$gray;
+    border-radius: 10px 10px 0 0;
+    display: flex;
+
+    h3:first-child {
+        margin-left: 1rem;
+    }
+
+    h3:nth-child(n + 2) {
+        display: none;
+    }
+}
+
+.links {
+    color: styleVars.$lite;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    background-color: rgba(24, 30, 41, .3);
+    margin: 5px 0;
+
+
+    p:first-child {
+        margin-left: 1rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        // border: 1px solid red;
+
+        span {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: styleVars.$gray;
+            margin-left: 5px;
+            padding: 10px;
+            border-radius: 50%;
+        }
+    }
+
+    p:nth-child(2) {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: styleVars.$gray;
+        margin-right: 5px;
+        padding: 10px;
+        border-radius: 50%;
+    }
+
+    p:nth-child(n + 3) {
+        display: none;
+    }
+}

@@ -6,7 +6,7 @@ type ButtonProps = {
 }
 const Button = ({buttonText, icon }: ButtonProps) => {
   return (
-    <button> <span> {buttonText} </span> {icon} </button>
+    <button> <span>{buttonText}</span>{icon} </button>
   )
 }
 

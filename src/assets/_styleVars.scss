@@ -6,3 +6,10 @@ $black: #0B101B;
 $gray: #181E29;
 $lite: #C9CED6;
 $gradient: linear-gradient(90deg, rgba(20,78,227,1) 5%, rgba(235,86,142,1) 25%, rgba(235,86,142,1) 60%, rgba(20,78,227,1) 90%);
+
+@mixin gradientText {
+    background: $gradient;
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
