@@ -1,21 +1,19 @@
-import Header from "./components/Header"
-import Links from "./components/links/Links"
-import Main from "./components/mainsection/Main"
-import './main.scss'
-import ExampleSVG from './assets/Swirl.svg'
+import { Route, createBrowserRouter, createRoutesFromElements, RouterProvider } from 'react-router-dom'
+import MainLayout from "./layouts/MainLayout"
+import HomePage from "./pages/HomePage"
 
 
 const App = () => {
-  return (
-    <div className="app">
-      <div className="svg-background">
-        <img src={ExampleSVG} alt="Background Swirl" />
-      </div>
-    <Header />
-    <Main />
-    <Links />
-    </div>
+  const router = createBrowserRouter(
+    createRoutesFromElements(
+      <Route path="/" element={<MainLayout />} >
+        <Route index element={<HomePage />} />
+        <Route path="/dashboard" element={<h1>Dashboard</h1>} />
+      </Route>
+    )
   )
+
+  return <RouterProvider router={router} />
 }
 
 export default App
