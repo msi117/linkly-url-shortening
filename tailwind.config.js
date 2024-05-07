@@ -12,6 +12,8 @@ export default {
       secondary: "#EB568E",
       white: "#FFFFFF",
       darkgray: "353C4A",
+      green: "#1EB036",
+      orange: "#B0901E",
     },
     extend: {},
   },

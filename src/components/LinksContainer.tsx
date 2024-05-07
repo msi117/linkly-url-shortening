@@ -5,11 +5,11 @@ const LinksContainer = () => {
     return (
         <section className="mx-auto w-11/12 text-white">
             <div className='flex gap-2 items-center bg-gray my-2 px-2 py-1 rounded-t-lg'>
-                <h2 className="text-xl font-medium flex items-center text-start basis-2/5 lg:basis-1/4">Short Link </h2>
-                <h2 className="text-xl font-medium hidden lg:block lg:basis-1/4"> Original Link </h2>
-                <h2 className="text-xl font-medium hidden basis-1/5 sm:block md:basis-1/6"> Clicks </h2>
-                <h2 className="text-xl font-medium hidden basis-1/5 sm:block md:basis-1/6"> Status </h2>
-                <h2 className="text-xl font-medium hidden md:block"> Date </h2>
+                <h2 className="text-xl py-1.5 font-medium flex items-center text-start basis-2/5 lg:basis-1/4">Short Link </h2>
+                <h2 className="text-xl py-1.5 font-medium hidden lg:block lg:basis-1/4"> Original Link </h2>
+                <h2 className="text-xl py-1.5 font-medium hidden basis-1/5 sm:block md:basis-1/6"> Clicks </h2>
+                <h2 className="text-xl py-1.5 font-medium hidden basis-1/5 sm:block md:basis-1/6"> Status </h2>
+                <h2 className="text-xl py-1.5 font-medium hidden md:block"> Date </h2>
             </div>
             {
                 links.map((link) => {
