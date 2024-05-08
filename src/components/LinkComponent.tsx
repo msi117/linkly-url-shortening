@@ -17,8 +17,12 @@ type LinkProps = {
 const LinkComponent = ({ link }: LinkProps) => {
     const [open, setOpen] = useState(false)
 
-    const handleClick = async () => {
-        await navigator.clipboard.writeText(link.shortLink)
+    const handleClick = () => {
+        navigator.clipboard.writeText(link.shortLink).then(() => {
+            // handle success here
+        }).catch((error) => {
+            console.log(error)
+        });
     }
 
     return (

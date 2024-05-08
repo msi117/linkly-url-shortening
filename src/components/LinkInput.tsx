@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react"
+import { useState } from "react"
 import Button from "./Button"
 import { FiArrowRight } from 'react-icons/fi'
 
@@ -6,17 +6,16 @@ const LinkInput = () => {
     const [link, setLink] = useState<string>("")
     const [isChecked, setIsChecked] = useState<boolean>(false)
 
-    const handleCheckbox = async () => {
+    const handleCheckbox = () => {
         setIsChecked(!isChecked)
         if (!isChecked) {
-            await handleAutoPaste()
+            navigator.clipboard.readText().then(text => {
+                setLink(text)
+                console.log(text)
+            }).catch(error => {
+                console.log(error)
+            })
         }
-    }
-
-    const handleAutoPaste = async () => {
-        const clipboardText = await navigator.clipboard.readText()
-        setLink(clipboardText)
-        console.log(clipboardText)
     }
 
     return (
