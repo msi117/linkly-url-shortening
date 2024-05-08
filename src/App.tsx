@@ -1,6 +1,7 @@
 import { Route, createBrowserRouter, createRoutesFromElements, RouterProvider } from 'react-router-dom'
 import MainLayout from "./layouts/MainLayout"
 import HomePage from "./pages/HomePage"
+import Dashboard from './pages/Dashboard'
 
 
 const App = () => {
@@ -8,7 +9,7 @@ const App = () => {
     createRoutesFromElements(
       <Route path="/" element={<MainLayout />} >
         <Route index element={<HomePage />} />
-        <Route path="/dashboard" element={<h1>Dashboard</h1>} />
+        <Route path="/dashboard" element={<Dashboard />} />
       </Route>
     )
   )
