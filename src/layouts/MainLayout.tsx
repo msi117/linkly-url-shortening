@@ -7,7 +7,7 @@ const MainLayout = () => {
 
     return (
         <main className='bg-black min-h-screen'>
-            <AuthContext.Provider value={null}>
+            <AuthContext.Provider value="Sameer">
                 <Header />
                 <Outlet />
             </AuthContext.Provider>
