@@ -3,14 +3,22 @@ import Button from "./Button"
 import { FiBell, FiChevronDown, FiLogIn } from 'react-icons/fi'
 import { AuthContext } from "../context/AuthContext"
 import Login from "./Login"
+import Register from "./Register"
 
 const Header = () => {
 
-  const auth = useContext(AuthContext)
+  // const auth = useContext(AuthContext)
   const [showLogin, setShowLogin] = useState(false)
+  const [showRegister, setShowRegister] = useState(false)
 
-  const handleClose = () => {
-    setShowLogin(showLogin => !showLogin)
+  const auth = false
+
+  const closeLogin = () => {
+    setShowLogin(false)
+  }
+
+  const closeRegister = () => {
+    setShowRegister(false)
   }
 
   return (
@@ -21,19 +29,24 @@ const Header = () => {
         {
           auth ?
             <div className="flex justify-center items-center gap-4">
-              {/* @TODO: Add a dropdown menu here */}
+              {/* TODO Add a dropdown menu here */}
               <Button className="rounded-full"> {auth} <FiChevronDown /> </Button>
+
+              {/* TODO Create notifications icon */}
               <Button className="bg-primary ring-primary"> <FiBell /> </Button>
             </div>
             :
             <div className="flex justify-center items-center gap-4">
               <Button handleButton={() => setShowLogin(true)}> <span className="hidden md:block"> Sign In </span>  <FiLogIn /> </Button>
-              <Button className="bg-primary ring-primary">Sign Up </Button>
+              <Button handleButton={() => setShowRegister(true)} className="bg-primary ring-primary">Sign Up </Button>
             </div>
         }
       </header>
       {
-        showLogin ? <Login handleClose={handleClose} /> : null
+        showLogin && <Login handleLogin={closeLogin} />
+      }
+      {
+        showRegister && <Register handleRegister={closeRegister} />
       }
     </>
   )
